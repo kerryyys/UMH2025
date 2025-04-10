@@ -1,0 +1,1 @@
+ # Configuration file (stores API key, endpoints, etc.)
