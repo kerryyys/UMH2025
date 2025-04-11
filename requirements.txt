@@ -1,1 +1,5 @@
-# Python dependencies (requests, python-dotenv, tensorflow, etc.)
+pandas
+numpy
+hmmlearn
+scikit-learn
+matplotlib
