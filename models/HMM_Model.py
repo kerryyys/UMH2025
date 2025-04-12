@@ -3,74 +3,150 @@ import numpy as np
 from hmmlearn.hmm import GaussianHMM
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
+import os
 
-# Load the data (mock data in this case, replace with real data)
+# Optional for CPU usage limit
+os.environ["LOKY_MAX_CPU_COUNT"] = "4"
+
+# === Load and Prepare Data ===
 df = pd.read_csv("./data/mock_onchain_data.csv", parse_dates=["Timestamp"])
-df = df.sort_values("Timestamp")
+df = df.sort_values("Timestamp").reset_index(drop=True)
 
-# Normalize on-chain features (features like Whale_Inflow, Exchange_Outflow, etc.)
 features = ["Whale_Inflow", "Exchange_Inflow", "Exchange_Outflow", "Active_Addresses", "Tx_Count"]
 scaler = StandardScaler()
 X = scaler.fit_transform(df[features])
 
-# Train the Hidden Markov Model (HMM) with 3 hidden states (Bull, Bear, Neutral)
-model = GaussianHMM(n_components=3, covariance_type="full", n_iter=3000)
-model.fit(X)
+# Time series train-test split
+train_size = int(len(X) * 0.8)
+X_train, X_test = X[:train_size], X[train_size:]
+df_train = df.iloc[:train_size].copy()
+df_test = df.iloc[train_size:].copy()
 
-# Predict the hidden states (market regimes)
-hidden_states = model.predict(X)
-df["Regime"] = hidden_states
+# === Train Gaussian HMM ===
+model = GaussianHMM(
+    n_components=3,
+    covariance_type="diag",
+    n_iter=5000,
+    tol=1e-4,
+    init_params="",
+    random_state=42
+)
+model.fit(X_train)
 
-# Map HMM states to market regimes
-# This map will associate the most profitable states with Bull, Neutral, and Bear
-# Map HMM states to market regimes
-df["Return"] = df["Price"].pct_change().fillna(0)
-regime_returns = df.groupby("Regime")["Return"].mean().sort_values()
+# === Assign Regimes to Train Set ===
+train_states = model.predict(X_train)
+df_train["Regime"] = train_states
+df_train["Return"] = df_train["Price"].pct_change().fillna(0)
 
-# Change the mapping to accommodate only 2 states
-regime_map = {regime_returns.index[0]: "Bear", 
-              regime_returns.index[1]: "Bull"}  # Only 2 states now
-df["Market_Regime"] = df["Regime"].map(regime_map)
+# Map regimes based on average return
+regime_order = df_train.groupby("Regime")["Return"].mean().sort_values().index
+regime_map = {
+    int(regime_order[0]): "Bear",
+    int(regime_order[1]): "Neutral",
+    int(regime_order[2]): "Bull"
+}
 
-# Map the market regime to trading signals
-# Strategy: Bull = Long, Bear = Short
-signal_map = {"Bull": 1, "Bear": -1}  # No Neutral state in this case
+# === Predict Regimes on Test Set using Sliding Window ===
+test_predictions = []
+window_size = 30  # about 15 hours of data
+
+for i in range(len(X_test)):
+    combined = np.vstack((X_train, X_test[:i+1]))
+    sequence = combined[-window_size:]
+    pred_seq = model.predict(sequence)
+    current_state = pred_seq[-1]
+    test_predictions.append(current_state)
+
+df_test["Regime"] = test_predictions
+df_test["Market_Regime"] = df_test["Regime"].map(regime_map)
+
+# === Combine Train & Test Sets ===
+df = pd.concat([df_train, df_test]).reset_index(drop=True)
+df["Market_Regime"] = df["Market_Regime"].fillna("Unknown")
+
+# === Trading Signal Mapping ===
+signal_map = {"Bull": 1.0, "Neutral": 0.0, "Bear": -1.0, "Unknown": 0.0}
+action_map = {1.0: "🟢 BUY", 0.0: "🟡 HOLD", -1.0: "🔴 SELL"}
+
 df["Signal"] = df["Market_Regime"].map(signal_map)
+df["Action"] = df["Signal"].map(action_map)
 
-# Backtest strategy based on trading signals (considering trading fee)
-df["Strategy_Return"] = df["Signal"].shift(1) * df["Return"]
-df["Net_Strategy_Return"] = df["Strategy_Return"] - 0.0006 * df["Signal"].diff().abs().fillna(0)
-df["Cumulative_Return"] = (1 + df["Net_Strategy_Return"]).cumprod()
+# === Backtesting Function ===
+def calculate_strategy_returns(df):
+    df = df.copy()
+    df["Position"] = df["Signal"].shift()
+    df["Return"] = df["Price"].pct_change().fillna(0)
+    
+    df["Strategy_Return"] = df["Position"] * df["Return"]
+    df["Trade_Size"] = df["Signal"].diff().abs()
+    df["Fees"] = 0.0006 * df["Trade_Size"]
+    df["Slippage"] = 0.0002 * df["Trade_Size"]
+    df["Net_Return"] = df["Strategy_Return"] - df["Fees"] - df["Slippage"]
+    df["Cumulative_Return"] = (1 + df["Net_Return"]).cumprod()
+    return df
 
-# Calculate the performance metrics: Sharpe Ratio, Max Drawdown, and Trade Frequency
-sharpe_ratio = df["Net_Strategy_Return"].mean() / df["Net_Strategy_Return"].std() * np.sqrt(252)
-rolling_max = df["Cumulative_Return"].cummax()
-mdd = (df["Cumulative_Return"] / rolling_max - 1).min()
-trade_freq = df["Signal"].diff().abs().fillna(0).mean() * 100
+df = calculate_strategy_returns(df)
 
-# Output performance metrics
-print(f"Sharpe Ratio: {sharpe_ratio:.2f}")
-print(f"Max Drawdown: {mdd:.2%}")
-print(f"Trade Frequency: {trade_freq:.2f}% per row")
+# === Strategy Evaluation ===
+def evaluate_strategy(df):
+    returns = df["Net_Return"].dropna()
+    sharpe = returns.mean() / returns.std() * np.sqrt(24 * 365)
+    
+    cum = df["Cumulative_Return"]
+    peak = cum.cummax()
+    drawdown = (cum - peak) / peak
+    max_dd = drawdown.min()
 
-# Save predictions and trade signals to a CSV file for further analysis
-df[["Timestamp", "Price", "Market_Regime", "Signal", "Net_Strategy_Return"]].to_csv("crypto_strategy_output.csv", index=False)
+    print(f"\n📈 Strategy Evaluation")
+    print(f"Sharpe Ratio: {sharpe:.2f}")
+    print(f"Max Drawdown: {max_dd:.2%}")
 
-# Function to generate trade signals based on the detected regime (Bull, Bear, Neutral)
-def generate_trade_signal(regime):
-    if regime == 0:  # Bull regime: Buy
-        return "buy"
-    elif regime == 1:  # Bear regime: Sell or stay out
-        return "sell"
-    else:  # Neutral regime: Hold or scalp
-        return "hold"
+evaluate_strategy(df)
 
-# After predicting the regime, generate the trade signal
-regime = model.predict(X)  # You can use X_test if testing on unseen data
-trade_signal = [generate_trade_signal(r) for r in regime]
+# === Real-time Prediction Helper ===
+def predict_next_state():
+    current_features = X[-30:]  # last 30 rows
+    current_state = model.predict(current_features)[-1]
+    next_state = np.argmax(model.transmat_[current_state])
+    return regime_map.get(next_state, "Unknown"), model.transmat_[current_state].max()
 
-# Optional: Plot cumulative returns of the strategy
-plt.figure(figsize=(12, 6))
-df.plot(x="Timestamp", y=["Cumulative_Return"], title="Backtested Cumulative Return", legend=False)
-plt.grid(True)
-plt.show()
+# === Print Final Recommendation ===
+next_regime, confidence = predict_next_state()
+print("\n=== Trading Recommendations ===")
+print(f"Current Market Regime: {df['Market_Regime'].iloc[-1]}")
+print(f"Recommended Action: {df['Action'].iloc[-1]}")
+print(f"\nNext Period Prediction: {next_regime} (Confidence: {confidence:.1%})")
+print("\nLatest Signals:")
+print(df[["Timestamp", "Price", "Market_Regime", "Action"]].tail(5).to_string(index=False))
+
+# === Visualization ===
+def plot_results(df):
+    os.makedirs("./results", exist_ok=True)
+    plt.figure(figsize=(14, 10))
+
+    # Color coding regimes
+    color_map = {"Bull": "green", "Bear": "red", "Neutral": "yellow", "Unknown": "gray"}
+    colors = df["Market_Regime"].map(color_map)
+
+    plt.subplot(2, 1, 1)
+    plt.scatter(df["Timestamp"], df["Price"], c=colors.values, s=10)
+    plt.title("Price with Market Regimes")
+    handles = [plt.Line2D([0], [0], marker='o', color='w', 
+              markerfacecolor=color_map[r], markersize=10) 
+              for r in color_map]
+    plt.legend(handles, color_map.keys())
+
+    plt.subplot(2, 1, 2)
+    plt.plot(df["Timestamp"], df["Cumulative_Return"])
+    plt.title("Strategy Cumulative Returns")
+    plt.tight_layout()
+    plt.savefig("./results/performance_visualization.png")
+    plt.show()
+
+plot_results(df)
+
+# === Save Outputs ===
+df[["Timestamp", "Price", "Market_Regime", "Action", "Net_Return"]].to_csv(
+    "./data/crypto_strategy_output.csv", 
+    index=False
+)
