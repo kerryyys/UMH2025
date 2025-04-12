@@ -1,4 +1,4 @@
-start_time,open_interest,high open interest,low open interest,open value of open interest,funding_rate,high funding rate,low funding rate,open funding rate,long_short_ratio,longShortRatio,shortAccount
+start_time,open_interest,high open interest,low open interest,open value of open interest,funding_rate,high funding rate,low funding rate,open funding rate,long_account,longShortRatio,shortAccount
 1.70407E+12,73693.02,74009.91,73688.31,74001.36,0.036737,0.037552,0.036737,0.037499,60.11,1.51,39.89
 1.70407E+12,73859.79,73996.24,73503.94,73693.02,0.035642,0.036737,0.035642,0.036737,59.61,1.48,40.39
 1.70407E+12,73713.73,73859.79,73671.38,73859.79,0.034971,0.035642,0.034793,0.035642,59.37,1.46,40.63

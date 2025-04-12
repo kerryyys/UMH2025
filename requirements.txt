@@ -3,3 +3,4 @@ numpy
 hmmlearn
 scikit-learn
 matplotlib
+scipy
