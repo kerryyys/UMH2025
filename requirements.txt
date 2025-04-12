@@ -4,3 +4,4 @@ hmmlearn
 scikit-learn
 matplotlib
 scipy
+joblib
