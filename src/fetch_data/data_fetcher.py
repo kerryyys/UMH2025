@@ -1,13 +1,25 @@
 import asyncio
-import logging
+from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 from typing import Dict
 from data_structure import TopicMap, LinkBuilder
 
 import pandas as pd
 import cybotrade_datasource
+
+
+class DataFetcher(ABC):
+    """
+    Abstract base class for data fetchers.
+    """
+    @abstractmethod
+    async def run(self):
+        """
+        Run the data fetching process.
+        """
+        pass
 
 
 @dataclass
@@ -47,7 +59,6 @@ class CybotradeDataFetcher:
     async def _fetch_and_save(self, name: str, topic: str):
         async with self._semaphore:
             try:
-                logging.info(f"▶ Fetching {name}")
                 data = await cybotrade_datasource.query_paginated(
                     api_key=self.api_key,
                     topic=topic,
@@ -57,9 +68,8 @@ class CybotradeDataFetcher:
                 df = pd.DataFrame(data)
                 path = self.output_dir / f"{name}.csv"
                 df.to_csv(path, index=False)
-                logging.info(f"✔ Saved {name} → {path}")
             except Exception:
-                logging.exception(f"✖ Error fetching {name}")
+                raise
 
     async def run(self):
         """Kick off all fetch tasks and wait for completion."""
