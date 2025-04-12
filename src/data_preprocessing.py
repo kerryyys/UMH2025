@@ -16,16 +16,43 @@ def preprocess_data(file_path, output_filename):
     # Sort and drop duplicate timestamps
     df = df.sort_values("start_time").drop_duplicates(subset=["start_time"])
 
+    # # Winsorize to limit extreme outliers (1% both tails)
+    # for col in ["active_addresses", "exchange_inflow", "exchange_outflow", "price", "transaction_count"]:
+    #     df[col] = winsorize(df[col], limits=[0.01, 0.01])
+
     # Winsorize to limit extreme outliers (1% both tails)
-    for col in ["active_addresses", "exchange_inflow", "exchange_outflow", "price", "transaction_count"]:
+    cols_to_winsorize = ["active_addresses", "exchange_inflow", "exchange_outflow", "price", "transaction_count"]
+    
+    # Include SSR_v for GN dataset if it exists
+    if "SSR_v" in df.columns:
+        cols_to_winsorize.append("SSR_v")
+    
+    # Include whale_ratio for CQ dataset if it exists
+    if "exchange_whale_ratio" in df.columns:
+        cols_to_winsorize.append("exchange_whale_ratio")
+
+    # Include reserve_usd for CQ dataset if it exists
+    if "reserve_usd" in df.columns:
+        cols_to_winsorize.append("reserve_usd")
+        
+    for col in cols_to_winsorize:
         df[col] = winsorize(df[col], limits=[0.01, 0.01])
 
     # Handle missing values (forward fill then backfill)
     df.ffill(inplace=True)
     df.bfill(inplace=True)
 
-    # Standardize features
+    # Standardize features (including SSR_v and whale_ratio if present)
     features = ["active_addresses", "exchange_inflow", "exchange_outflow", "price", "transaction_count"]
+    
+    # Add SSR_v or whale_ratio to features if they exist
+    if "SSR_v" in df.columns:
+        features.append("SSR_v")
+    if "whale_ratio" in df.columns:
+        features.append("whale_ratio")
+    if "reserve_usd" in df.columns:
+        features.append("reserve_usd")
+    
     scaler = StandardScaler()
     df[features] = scaler.fit_transform(df[features])
 
