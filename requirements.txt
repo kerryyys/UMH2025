@@ -3,4 +3,6 @@ numpy
 hmmlearn
 scikit-learn
 matplotlib
+scipy
+joblib
 cybotrade_datasource
