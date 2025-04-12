@@ -14,5 +14,15 @@ async def main():
     )
     df = pd.DataFrame(data)
     print(df)
+
+    stream = await cybotrade_datasource.stream(
+        api_key=API_KEY,
+        topics=[
+            'cryptoquant|btc/inter-entity-flows/miner-to-miner?from_miner=f2pool&to_miner=all_miner&window=hour',
+            'cryptoquant|btc/market-data/liquidations?exchange=deribit&window=min',
+        ],
+    )
+    async for msg in stream:
+        print(msg)
     
 asyncio.run(main())
