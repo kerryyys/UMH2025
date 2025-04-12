@@ -9,7 +9,7 @@ os.environ["LOKY_MAX_CPU_COUNT"] = "4"
 
 def main():
     # === Data Loading & Cleaning =============================================
-    df = pd.read_csv("./data/merged_dataset.csv")
+    df = pd.read_csv("./data/raw_data/merged_dataset.csv")
     
     # Handle price data
     price_col = [c for c in df.columns if 'price' in c.lower()][0]
