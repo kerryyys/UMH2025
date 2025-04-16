@@ -4,6 +4,7 @@ from hmmlearn.hmm import GaussianHMM
 from sklearn.preprocessing import StandardScaler
 import matplotlib.pyplot as plt
 import os
+import joblib
 
 os.environ["LOKY_MAX_CPU_COUNT"] = "4"
 
@@ -43,6 +44,9 @@ model = GaussianHMM(
     random_state=42
 )
 model.fit(X_train)
+
+# Save the model
+joblib.dump(model, './models/HMM_Model.pkl')
 
 # === Regime Assignment ===
 df_train["Regime"] = model.predict(X_train)
