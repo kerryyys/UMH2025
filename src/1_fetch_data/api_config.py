@@ -5,6 +5,15 @@ from data_structure import LinkBuilder
 import requests
 from bs4 import BeautifulSoup
 from typing import List, Tuple, Callable
+import os
+import json
+import asyncio
+from pathlib import Path
+from typing import Dict, List
+
+import httpx
+from lxml import html
+from tqdm.asyncio import tqdm_asyncio
 
 # ──────────────────────────────────────────────────────────────────────────────
 # 0) cybotrade_datasource API Configurations
@@ -123,21 +132,6 @@ def make_glassnode_link(category: str, endpoint: str) -> str:
     qs = f"?a={p['CRYPTO']}&i={p['WINDOW']}"
     return base + qs
 
-
-# GLASSNODE_LINKS: TopicMap = {
-#     "glassnode": {
-#         "indicators": [
-#             "asol", "cdd_supply_adjusted_binary", "coin_blocks_created",
-#             "coin_blocks_destroyed", "cdd", "average_dormancy", "asol_account_based",
-#             "cdd_account_based", "dormancy_account_based", "liveliness_account_based",
-#             "asol_lth_account_based", "cdd_lth_account_based", "dormancy_lth_account_based",
-#             "realized_loss_lth_account_based", "realized_loss_lth_to_exchanges_account_based",
-#             "realized_profit_lth_account_based", "nupl_more_155_account_based", "msol_account_based",
-#             "mvrv_account_based", "nvt_entity_adjusted", "rcap_account_based",
-
-#         ]
-#     }
-# }
 
 def fetch_html(url: str) -> str:
     """Fetch the HTML content from the given URL, raising an error on failure."""
