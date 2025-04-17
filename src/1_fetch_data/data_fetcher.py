@@ -10,124 +10,89 @@ import pandas as pd
 import cybotrade_datasource
 
 
+import asyncio
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+from typing import Dict, List, Tuple
+
+import pandas as pd
+import cybotrade_datasource
+from rich.console import Console
+from rich.live import Live
+from rich.layout import Layout
+from rich.panel import Panel
+from rich.text import Text
+from rich.progress import Progress, BarColumn, TextColumn, TimeElapsedColumn
+
+console = Console()
+
+
 @dataclass
-class CybotradeDataFetcher:
-    api_key: str
+class TaskInfo:
+    name: str
+    provider: str
+    topic: str
+    year: str
     start: datetime
     end: datetime
-    links: TopicMap
-    link_builder: LinkBuilder
-    output_dir: Path = Path("data")
-    concurrency_limit: int = 5
-
-    # Initialized in __post_init__
-    _semaphore: asyncio.Semaphore = field(init=False, repr=False)
-    _topics: Dict[str, str] = field(init=False, repr=False)
-
-    def __post_init__(self):
-        self.output_dir.mkdir(parents=True, exist_ok=True)
-        self._semaphore = asyncio.Semaphore(self.concurrency_limit)
-        self._topics = self._build_topics()
-
-    def _build_topics(self) -> Dict[str, str]:
-        topics: Dict[str, str] = {}
-        for provider, cats in self.links.items():
-            for category, endpoints in cats.items():
-                for ep in endpoints:
-                    name = f"{provider}_{category}_{ep}"
-                    topics[name] = self.link_builder(category, ep)
-        return topics
-
-    async def _fetch_and_save(self, name: str, topic: str):
-        async with self._semaphore:
-            try:
-                data = await cybotrade_datasource.query_paginated(
-                    api_key=self.api_key,
-                    topic=topic,
-                    start_time=self.start,
-                    end_time=self.end,
-                )
-                df = pd.DataFrame(data)
-                path = self.output_dir / f"{name}.csv"
-                df.to_csv(path, index=False)
-            except Exception:
-                raise
-
-    async def run(self):
-        """Kick off all fetch tasks and wait for completion."""
-        tasks = [
-            asyncio.create_task(self._fetch_and_save(name, url))
-            for name, url in self._topics.items()
-        ]
-        await asyncio.gather(*tasks)
 
 
-@dataclass
 class CybotradeCryptoDataFetcher:
-    api_key: str
-    crypto: str
-    years: Dict[str, Tuple[datetime, datetime]]
-    links: Dict[str, str] = field(default_factory=dict)
-    output_dir: Path = Path("data")
-    concurrency_limit: int = 5
-
-    # Semaphore will be initialized in __post_init__
-    _semaphore: asyncio.Semaphore = field(init=False, repr=False)
-
-    def __post_init__(self):
+    def __init__(self, api_key: str, crypto: str, years: Dict[str, Tuple[datetime, datetime]], links: Dict[str, str], output_dir: Path = Path("data"), concurrency_limit: int = 5):
+        self.api_key = api_key
+        self.crypto = crypto
+        self.years = years
+        self.links = links
+        self.output_dir = output_dir
+        self.concurrency_limit = concurrency_limit
         self.output_dir.mkdir(parents=True, exist_ok=True)
-        self._semaphore = asyncio.Semaphore(self.concurrency_limit)
 
-    async def _fetch_and_save(self, name: str, provider: str, topic: str):
-        async with self._semaphore:
-            for year, (start, end) in self.years.items():
-                try:
-                    data = await cybotrade_datasource.query_paginated(
-                        api_key=self.api_key,
-                        topic=topic,
-                        start_time=start,
-                        end_time=end,
-                    )
-                    df = pd.DataFrame(data)
-                    path = self.output_dir / \
-                        f"{self.crypto}/{year}/{provider}/{name}.csv"
-                    path.parent.mkdir(parents=True, exist_ok=True)
-                    df.to_csv(path, index=False)
-                    print(f"Saved data for {name} for year {year} at {path}")
-                except Exception as e:
-                    print(f"Error fetching {name} for year {year}: {e}")
-
-    async def run(self):
-        """Kick off all fetch tasks and wait for their completion."""
+    def _build_tasks(self) -> List[TaskInfo]:
         tasks = []
-        # Iterate through each topic in the links dictionary
         for name, topic in self.links.items():
-            # Assuming the topic name is in the format "provider_category_endpoint"
-            provider = name.split('_')[0]
-            print(provider)
-            tasks.append(asyncio.create_task(
-                self._fetch_and_save(name, provider, topic)))
-        await asyncio.gather(*tasks)
+            provider = name.split("_", 1)[0]
+            for year, (start, end) in self.years.items():
+                tasks.append(TaskInfo(name, provider, topic, year, start, end))
+        return tasks
 
+    async def _download(self, task: TaskInfo, semaphore: asyncio.Semaphore, progress: Progress, progress_id: int, status_panel: Text):
+        async with semaphore:
+            try:
+                data = await cybotrade_datasource.query_paginated(api_key=self.api_key, topic=task.topic, start_time=task.start, end_time=task.end)
+                df = pd.DataFrame(data)
+                path = self.output_dir / self.crypto / \
+                    task.year / task.provider / f"{task.name}.csv"
+                path.parent.mkdir(parents=True, exist_ok=True)
+                df.to_csv(path, index=False)
+                status_panel.update(f"[green]Downloaded:[/] {path}")
+            except Exception as e:
+                status_panel.update(
+                    f"[red]Error:[/] {task.name} ({task.year}): {e}")
+            finally:
+                progress.advance(progress_id)
 
-def build_topics(links: Dict[str, Dict[str, list]], link_builder: Callable[[str, str], str]) -> Dict[str, str]:
-    """
-    Build a dictionary mapping topic names to URLs using the provided link builder function.
+    def run(self):
+        tasks_info = self._build_tasks()
+        total = len(tasks_info)
+        progress = Progress(
+            TextColumn("[bold blue]{task.description}"),
+            BarColumn(),
+            TextColumn("{task.completed}/{task.total}"),
+            TimeElapsedColumn(),
+            console=console,
+            refresh_per_second=10,
+        )
+        status_panel = Text("Last downloaded: N/A")
+        layout = Layout()
+        layout.split_column(
+            Layout(Panel(progress, title="Progress"), size=3),
+            Layout(Panel(status_panel, title="Status"), ratio=1),
+        )
 
-    Parameters:
-        links (Dict[str, Dict[str, list]]): A nested dictionary where:
-            - Keys are providers.
-            - Values are dictionaries mapping categories to lists of endpoints.
-        link_builder (Callable): A function that takes a category and an endpoint to return a link.
-
-    Returns:
-        Dict[str, str]: A dictionary where keys are in the format "provider_category_endpoint" and
-                        values are the corresponding URLs.
-    """
-    topics = {}
-    for provider, categories in links.items():
-        for category, endpoints in categories.items():
-            for ep in endpoints:
-                name = f"{provider}_{category}_{ep}"
-                topics[name] = link_builder(category, ep)
-    return topics
+        async def supervisor():
+            semaphore = asyncio.Semaphore(self.concurrency_limit)
+            progress_id = progress.add_task("Downloading", total=total)
+            await asyncio.gather(*(self._download(task, semaphore, progress, progress_id, status_panel) for task in tasks_info))
+        with Live(layout, console=console, refresh_per_second=10):
+            asyncio.run(supervisor())
