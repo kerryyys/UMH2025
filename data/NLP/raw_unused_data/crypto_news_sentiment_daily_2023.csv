@@ -1,0 +1,366 @@
+date,headline,sentiment_score,sentiment_label
+2023-01-01,"Crypto market cap crosses 25000 trillion, led by altcoins.",0.0,Neutral
+2023-01-02,Whale accumulation spikes as BTC holds key support at 25136.,0.4019,Bullish
+2023-01-03,ETF approval rumors fuel BTC rally past 25273.,0.4767,Bullish
+2023-01-04,Ethereum breaks 25410 amid DeFi revival.,0.0,Neutral
+2023-01-05,"Crypto market cap crosses 25547 trillion, led by altcoins.",0.0,Neutral
+2023-01-06,"Crypto market cap crosses 25684 trillion, led by altcoins.",0.0,Neutral
+2023-01-07,Whale accumulation spikes as BTC holds key support at 25821.,0.4019,Bullish
+2023-01-08,"Crypto market cap crosses 25958 trillion, led by altcoins.",0.0,Neutral
+2023-01-09,Bitcoin surges to 26095 as institutional demand grows.,-0.128,Bearish
+2023-01-10,Ethereum breaks 26232 amid DeFi revival.,0.0,Neutral
+2023-01-11,"Crypto market cap crosses 26369 trillion, led by altcoins.",0.0,Neutral
+2023-01-12,Whale accumulation spikes as BTC holds key support at 26506.,0.4019,Bullish
+2023-01-13,ETF approval rumors fuel BTC rally past 26643.,0.4767,Bullish
+2023-01-14,Whale accumulation spikes as BTC holds key support at 26780.,0.4019,Bullish
+2023-01-15,Bitcoin surges to 26917 as institutional demand grows.,-0.128,Bearish
+2023-01-16,"Crypto market cap crosses 27054 trillion, led by altcoins.",0.0,Neutral
+2023-01-17,Bitcoin surges to 27191 as institutional demand grows.,-0.128,Bearish
+2023-01-18,Ethereum breaks 27328 amid DeFi revival.,0.0,Neutral
+2023-01-19,Whale accumulation spikes as BTC holds key support at 27465.,0.4019,Bullish
+2023-01-20,Whale accumulation spikes as BTC holds key support at 27602.,0.4019,Bullish
+2023-01-21,Whale accumulation spikes as BTC holds key support at 27739.,0.4019,Bullish
+2023-01-22,ETF approval rumors fuel BTC rally past 27876.,0.4767,Bullish
+2023-01-23,Whale accumulation spikes as BTC holds key support at 28013.,0.4019,Bullish
+2023-01-24,Ethereum breaks 28150 amid DeFi revival.,0.0,Neutral
+2023-01-25,"Crypto market cap crosses 28287 trillion, led by altcoins.",0.0,Neutral
+2023-01-26,Bitcoin surges to 28424 as institutional demand grows.,-0.128,Bearish
+2023-01-27,"Crypto market cap crosses 28561 trillion, led by altcoins.",0.0,Neutral
+2023-01-28,Whale accumulation spikes as BTC holds key support at 28698.,0.4019,Bullish
+2023-01-29,Bitcoin surges to 28835 as institutional demand grows.,-0.128,Bearish
+2023-01-30,Ethereum breaks 28972 amid DeFi revival.,0.0,Neutral
+2023-01-31,Bitcoin surges to 29109 as institutional demand grows.,-0.128,Bearish
+2023-02-01,Ethereum breaks 29246 amid DeFi revival.,0.0,Neutral
+2023-02-02,Whale accumulation spikes as BTC holds key support at 29383.,0.4019,Bullish
+2023-02-03,Whale accumulation spikes as BTC holds key support at 29520.,0.4019,Bullish
+2023-02-04,ETF approval rumors fuel BTC rally past 29657.,0.4767,Bullish
+2023-02-05,"Crypto market cap crosses 29794 trillion, led by altcoins.",0.0,Neutral
+2023-02-06,Bitcoin surges to 29931 as institutional demand grows.,-0.128,Bearish
+2023-02-07,"Crypto market cap crosses 30068 trillion, led by altcoins.",0.0,Neutral
+2023-02-08,Whale accumulation spikes as BTC holds key support at 30205.,0.4019,Bullish
+2023-02-09,ETF approval rumors fuel BTC rally past 30342.,0.4767,Bullish
+2023-02-10,Whale accumulation spikes as BTC holds key support at 30479.,0.4019,Bullish
+2023-02-11,ETF approval rumors fuel BTC rally past 30616.,0.4767,Bullish
+2023-02-12,Ethereum breaks 30753 amid DeFi revival.,0.0,Neutral
+2023-02-13,Ethereum breaks 30890 amid DeFi revival.,0.0,Neutral
+2023-02-14,Whale accumulation spikes as BTC holds key support at 31027.,0.4019,Bullish
+2023-02-15,ETF approval rumors fuel BTC rally past 31164.,0.4767,Bullish
+2023-02-16,ETF approval rumors fuel BTC rally past 31301.,0.4767,Bullish
+2023-02-17,Bitcoin surges to 31438 as institutional demand grows.,-0.128,Bearish
+2023-02-18,ETF approval rumors fuel BTC rally past 31575.,0.4767,Bullish
+2023-02-19,Whale accumulation spikes as BTC holds key support at 31712.,0.4019,Bullish
+2023-02-20,Ethereum breaks 31849 amid DeFi revival.,0.0,Neutral
+2023-02-21,Ethereum breaks 31986 amid DeFi revival.,0.0,Neutral
+2023-02-22,Whale accumulation spikes as BTC holds key support at 32123.,0.4019,Bullish
+2023-02-23,Whale accumulation spikes as BTC holds key support at 32260.,0.4019,Bullish
+2023-02-24,Bitcoin surges to 32397 as institutional demand grows.,-0.128,Bearish
+2023-02-25,ETF approval rumors fuel BTC rally past 32534.,0.4767,Bullish
+2023-02-26,Bitcoin surges to 32671 as institutional demand grows.,-0.128,Bearish
+2023-02-27,Bitcoin surges to 32808 as institutional demand grows.,-0.128,Bearish
+2023-02-28,Whale accumulation spikes as BTC holds key support at 32945.,0.4019,Bullish
+2023-03-01,ETF approval rumors fuel BTC rally past 33082.,0.4767,Bullish
+2023-03-02,Bitcoin surges to 33219 as institutional demand grows.,-0.128,Bearish
+2023-03-03,"Crypto market cap crosses 33356 trillion, led by altcoins.",0.0,Neutral
+2023-03-04,Whale accumulation spikes as BTC holds key support at 33493.,0.4019,Bullish
+2023-03-05,ETF approval rumors fuel BTC rally past 33630.,0.4767,Bullish
+2023-03-06,"Crypto market cap crosses 33767 trillion, led by altcoins.",0.0,Neutral
+2023-03-07,Whale accumulation spikes as BTC holds key support at 33904.,0.4019,Bullish
+2023-03-08,Whale accumulation spikes as BTC holds key support at 34041.,0.4019,Bullish
+2023-03-09,ETF approval rumors fuel BTC rally past 34178.,0.4767,Bullish
+2023-03-10,Bitcoin surges to 34315 as institutional demand grows.,-0.128,Bearish
+2023-03-11,Ethereum breaks 34452 amid DeFi revival.,0.0,Neutral
+2023-03-12,"Crypto market cap crosses 34589 trillion, led by altcoins.",0.0,Neutral
+2023-03-13,Bitcoin surges to 34726 as institutional demand grows.,-0.128,Bearish
+2023-03-14,"Crypto market cap crosses 34863 trillion, led by altcoins.",0.0,Neutral
+2023-03-15,Ethereum breaks 35000 amid DeFi revival.,0.0,Neutral
+2023-03-16,"Crypto market cap crosses 35136 trillion, led by altcoins.",0.0,Neutral
+2023-03-17,Whale accumulation spikes as BTC holds key support at 35273.,0.4019,Bullish
+2023-03-18,"Crypto market cap crosses 35410 trillion, led by altcoins.",0.0,Neutral
+2023-03-19,Bitcoin surges to 35547 as institutional demand grows.,-0.128,Bearish
+2023-03-20,"Crypto market cap crosses 35684 trillion, led by altcoins.",0.0,Neutral
+2023-03-21,Ethereum breaks 35821 amid DeFi revival.,0.0,Neutral
+2023-03-22,ETF approval rumors fuel BTC rally past 35958.,0.4767,Bullish
+2023-03-23,Whale accumulation spikes as BTC holds key support at 36095.,0.4019,Bullish
+2023-03-24,"Crypto market cap crosses 36232 trillion, led by altcoins.",0.0,Neutral
+2023-03-25,"Crypto market cap crosses 36369 trillion, led by altcoins.",0.0,Neutral
+2023-03-26,ETF approval rumors fuel BTC rally past 36506.,0.4767,Bullish
+2023-03-27,ETF approval rumors fuel BTC rally past 36643.,0.4767,Bullish
+2023-03-28,Bitcoin surges to 36780 as institutional demand grows.,-0.128,Bearish
+2023-03-29,ETF approval rumors fuel BTC rally past 36917.,0.4767,Bullish
+2023-03-30,Whale accumulation spikes as BTC holds key support at 37054.,0.4019,Bullish
+2023-03-31,Ethereum breaks 37191 amid DeFi revival.,0.0,Neutral
+2023-04-01,"Crypto market cap crosses 37328 trillion, led by altcoins.",0.0,Neutral
+2023-04-02,Whale accumulation spikes as BTC holds key support at 37465.,0.4019,Bullish
+2023-04-03,Whale accumulation spikes as BTC holds key support at 37602.,0.4019,Bullish
+2023-04-04,Whale accumulation spikes as BTC holds key support at 37739.,0.4019,Bullish
+2023-04-05,"Crypto market cap crosses 37876 trillion, led by altcoins.",0.0,Neutral
+2023-04-06,"Crypto market cap crosses 38013 trillion, led by altcoins.",0.0,Neutral
+2023-04-07,Whale accumulation spikes as BTC holds key support at 38150.,0.4019,Bullish
+2023-04-08,Whale accumulation spikes as BTC holds key support at 38287.,0.4019,Bullish
+2023-04-09,Bitcoin surges to 38424 as institutional demand grows.,-0.128,Bearish
+2023-04-10,Whale accumulation spikes as BTC holds key support at 38561.,0.4019,Bullish
+2023-04-11,Bitcoin surges to 38698 as institutional demand grows.,-0.128,Bearish
+2023-04-12,"Crypto market cap crosses 38835 trillion, led by altcoins.",0.0,Neutral
+2023-04-13,"Crypto market cap crosses 38972 trillion, led by altcoins.",0.0,Neutral
+2023-04-14,ETF approval rumors fuel BTC rally past 39109.,0.4767,Bullish
+2023-04-15,Ethereum breaks 39246 amid DeFi revival.,0.0,Neutral
+2023-04-16,"Crypto market cap crosses 39383 trillion, led by altcoins.",0.0,Neutral
+2023-04-17,ETF approval rumors fuel BTC rally past 39520.,0.4767,Bullish
+2023-04-18,"Crypto market cap crosses 39657 trillion, led by altcoins.",0.0,Neutral
+2023-04-19,Whale accumulation spikes as BTC holds key support at 39794.,0.4019,Bullish
+2023-04-20,Whale accumulation spikes as BTC holds key support at 39931.,0.4019,Bullish
+2023-04-21,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-04-22,Long liquidations exceed 74876 million in 24 hours.,0.0,Neutral
+2023-04-23,Long liquidations exceed 74794 million in 24 hours.,0.0,Neutral
+2023-04-24,Exchange outflows suggest panic selling after 74712 drop.,-0.6597,Bearish
+2023-04-25,Exchange outflows suggest panic selling after 74630 drop.,-0.6597,Bearish
+2023-04-26,Bearish sentiment dominates as BTC loses 74547 support.,0.1531,Bullish
+2023-04-27,Exchange outflows suggest panic selling after 74465 drop.,-0.6597,Bearish
+2023-04-28,BTC crashes 74383 as Fed signals rate hikes.,0.0,Neutral
+2023-04-29,Exchange outflows suggest panic selling after 74301 drop.,-0.6597,Bearish
+2023-04-30,Exchange outflows suggest panic selling after 74219 drop.,-0.6597,Bearish
+2023-05-01,Exchange outflows suggest panic selling after 74136 drop.,-0.6597,Bearish
+2023-05-02,Bearish sentiment dominates as BTC loses 74054 support.,0.1531,Bullish
+2023-05-03,BTC crashes 73972 as Fed signals rate hikes.,0.0,Neutral
+2023-05-04,Exchange outflows suggest panic selling after 73890 drop.,-0.6597,Bearish
+2023-05-05,Long liquidations exceed 73808 million in 24 hours.,0.0,Neutral
+2023-05-06,Exchange outflows suggest panic selling after 73726 drop.,-0.6597,Bearish
+2023-05-07,Bearish sentiment dominates as BTC loses 73643 support.,0.1531,Bullish
+2023-05-08,Long liquidations exceed 73561 million in 24 hours.,0.0,Neutral
+2023-05-09,Long liquidations exceed 73479 million in 24 hours.,0.0,Neutral
+2023-05-10,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-11,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-12,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-13,BTC crashes 73150 as Fed signals rate hikes.,0.0,Neutral
+2023-05-14,Exchange outflows suggest panic selling after 73068 drop.,-0.6597,Bearish
+2023-05-15,BTC crashes 72986 as Fed signals rate hikes.,0.0,Neutral
+2023-05-16,BTC crashes 72904 as Fed signals rate hikes.,0.0,Neutral
+2023-05-17,Bearish sentiment dominates as BTC loses 72821 support.,0.1531,Bullish
+2023-05-18,BTC crashes 72739 as Fed signals rate hikes.,0.0,Neutral
+2023-05-19,BTC crashes 72657 as Fed signals rate hikes.,0.0,Neutral
+2023-05-20,Exchange outflows suggest panic selling after 72575 drop.,-0.6597,Bearish
+2023-05-21,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-22,BTC crashes 72410 as Fed signals rate hikes.,0.0,Neutral
+2023-05-23,Long liquidations exceed 72328 million in 24 hours.,0.0,Neutral
+2023-05-24,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-25,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-26,Long liquidations exceed 72082 million in 24 hours.,0.0,Neutral
+2023-05-27,BTC crashes 72000 as Fed signals rate hikes.,0.0,Neutral
+2023-05-28,BTC crashes 71917 as Fed signals rate hikes.,0.0,Neutral
+2023-05-29,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-30,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-05-31,Exchange outflows suggest panic selling after 71671 drop.,-0.6597,Bearish
+2023-06-01,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-02,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-03,Long liquidations exceed 71424 million in 24 hours.,0.0,Neutral
+2023-06-04,BTC crashes 71342 as Fed signals rate hikes.,0.0,Neutral
+2023-06-05,BTC crashes 71260 as Fed signals rate hikes.,0.0,Neutral
+2023-06-06,Exchange outflows suggest panic selling after 71178 drop.,-0.6597,Bearish
+2023-06-07,Long liquidations exceed 71095 million in 24 hours.,0.0,Neutral
+2023-06-08,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-09,Long liquidations exceed 70931 million in 24 hours.,0.0,Neutral
+2023-06-10,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-11,Long liquidations exceed 70767 million in 24 hours.,0.0,Neutral
+2023-06-12,Bearish sentiment dominates as BTC loses 70684 support.,0.1531,Bullish
+2023-06-13,Bearish sentiment dominates as BTC loses 70602 support.,0.1531,Bullish
+2023-06-14,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-15,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-16,BTC crashes 70356 as Fed signals rate hikes.,0.0,Neutral
+2023-06-17,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-18,Long liquidations exceed 70191 million in 24 hours.,0.0,Neutral
+2023-06-19,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-20,BTC crashes 70027 as Fed signals rate hikes.,0.0,Neutral
+2023-06-21,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-06-22,Long liquidations exceed 69863 million in 24 hours.,0.0,Neutral
+2023-06-23,Bearish sentiment dominates as BTC loses 69780 support.,0.1531,Bullish
+2023-06-24,Exchange outflows suggest panic selling after 69698 drop.,-0.6597,Bearish
+2023-06-25,BTC crashes 69616 as Fed signals rate hikes.,0.0,Neutral
+2023-06-26,Exchange outflows suggest panic selling after 69534 drop.,-0.6597,Bearish
+2023-06-27,Bearish sentiment dominates as BTC loses 69452 support.,0.1531,Bullish
+2023-06-28,Bearish sentiment dominates as BTC loses 69369 support.,0.1531,Bullish
+2023-06-29,Bearish sentiment dominates as BTC loses 69287 support.,0.1531,Bullish
+2023-06-30,Regulatory fears trigger market-wide correction.,-0.4215,Bearish
+2023-07-01,Exchange outflows suggest panic selling after 69123 drop.,-0.6597,Bearish
+2023-07-02,Exchange outflows suggest panic selling after 69041 drop.,-0.6597,Bearish
+2023-07-03,Market awaits Fed decision; BTC holds at 45013.,0.0772,Bullish
+2023-07-04,On-chain data shows mixed signals near 45041.,0.0,Neutral
+2023-07-05,Market awaits Fed decision; BTC holds at 45068.,0.0772,Bullish
+2023-07-06,On-chain data shows mixed signals near 45095.,0.0,Neutral
+2023-07-07,Market awaits Fed decision; BTC holds at 45123.,0.0772,Bullish
+2023-07-08,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-09,Market awaits Fed decision; BTC holds at 45178.,0.0772,Bullish
+2023-07-10,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-11,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-12,BTC consolidates near 45260 amid low volatility.,-0.2732,Bearish
+2023-07-13,Analysts debate next trend as BTC trades sideways at 45287.,0.0,Neutral
+2023-07-14,On-chain data shows mixed signals near 45315.,0.0,Neutral
+2023-07-15,BTC consolidates near 45342 amid low volatility.,-0.2732,Bearish
+2023-07-16,On-chain data shows mixed signals near 45369.,0.0,Neutral
+2023-07-17,Market awaits Fed decision; BTC holds at 45397.,0.0772,Bullish
+2023-07-18,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-19,BTC consolidates near 45452 amid low volatility.,-0.2732,Bearish
+2023-07-20,BTC consolidates near 45479 amid low volatility.,-0.2732,Bearish
+2023-07-21,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-22,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-23,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-07-24,Market awaits Fed decision; BTC holds at 45589.,0.0772,Bullish
+2023-07-25,Analysts debate next trend as BTC trades sideways at 45616.,0.0,Neutral
+2023-07-26,BTC consolidates near 45643 amid low volatility.,-0.2732,Bearish
+2023-07-27,BTC consolidates near 45671 amid low volatility.,-0.2732,Bearish
+2023-07-28,BTC consolidates near 45698 amid low volatility.,-0.2732,Bearish
+2023-07-29,On-chain data shows mixed signals near 45726.,0.0,Neutral
+2023-07-30,Analysts debate next trend as BTC trades sideways at 45753.,0.0,Neutral
+2023-07-31,BTC consolidates near 45780 amid low volatility.,-0.2732,Bearish
+2023-08-01,Analysts debate next trend as BTC trades sideways at 45808.,0.0,Neutral
+2023-08-02,On-chain data shows mixed signals near 45835.,0.0,Neutral
+2023-08-03,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-08-04,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-08-05,BTC consolidates near 45917 amid low volatility.,-0.2732,Bearish
+2023-08-06,Analysts debate next trend as BTC trades sideways at 45945.,0.0,Neutral
+2023-08-07,Analysts debate next trend as BTC trades sideways at 45972.,0.0,Neutral
+2023-08-08,BTC consolidates near 46000 amid low volatility.,-0.2732,Bearish
+2023-08-09,BTC consolidates near 46027 amid low volatility.,-0.2732,Bearish
+2023-08-10,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-08-11,Analysts debate next trend as BTC trades sideways at 46082.,0.0,Neutral
+2023-08-12,On-chain data shows mixed signals near 46109.,0.0,Neutral
+2023-08-13,On-chain data shows mixed signals near 46136.,0.0,Neutral
+2023-08-14,Analysts debate next trend as BTC trades sideways at 46164.,0.0,Neutral
+2023-08-15,Analysts debate next trend as BTC trades sideways at 46191.,0.0,Neutral
+2023-08-16,BTC consolidates near 46219 amid low volatility.,-0.2732,Bearish
+2023-08-17,Market awaits Fed decision; BTC holds at 46246.,0.0772,Bullish
+2023-08-18,Market awaits Fed decision; BTC holds at 46273.,0.0772,Bullish
+2023-08-19,BTC consolidates near 46301 amid low volatility.,-0.2732,Bearish
+2023-08-20,Analysts debate next trend as BTC trades sideways at 46328.,0.0,Neutral
+2023-08-21,BTC consolidates near 46356 amid low volatility.,-0.2732,Bearish
+2023-08-22,BTC consolidates near 46383 amid low volatility.,-0.2732,Bearish
+2023-08-23,On-chain data shows mixed signals near 46410.,0.0,Neutral
+2023-08-24,On-chain data shows mixed signals near 46438.,0.0,Neutral
+2023-08-25,Market awaits Fed decision; BTC holds at 46465.,0.0772,Bullish
+2023-08-26,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-08-27,On-chain data shows mixed signals near 46520.,0.0,Neutral
+2023-08-28,Analysts debate next trend as BTC trades sideways at 46547.,0.0,Neutral
+2023-08-29,BTC consolidates near 46575 amid low volatility.,-0.2732,Bearish
+2023-08-30,On-chain data shows mixed signals near 46602.,0.0,Neutral
+2023-08-31,Market awaits Fed decision; BTC holds at 46630.,0.0772,Bullish
+2023-09-01,On-chain data shows mixed signals near 46657.,0.0,Neutral
+2023-09-02,BTC consolidates near 46684 amid low volatility.,-0.2732,Bearish
+2023-09-03,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-04,Analysts debate next trend as BTC trades sideways at 46739.,0.0,Neutral
+2023-09-05,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-06,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-07,BTC consolidates near 46821 amid low volatility.,-0.2732,Bearish
+2023-09-08,BTC consolidates near 46849 amid low volatility.,-0.2732,Bearish
+2023-09-09,Market awaits Fed decision; BTC holds at 46876.,0.0772,Bullish
+2023-09-10,Analysts debate next trend as BTC trades sideways at 46904.,0.0,Neutral
+2023-09-11,Analysts debate next trend as BTC trades sideways at 46931.,0.0,Neutral
+2023-09-12,On-chain data shows mixed signals near 46958.,0.0,Neutral
+2023-09-13,BTC consolidates near 46986 amid low volatility.,-0.2732,Bearish
+2023-09-14,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-15,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-16,BTC consolidates near 47068 amid low volatility.,-0.2732,Bearish
+2023-09-17,BTC consolidates near 47095 amid low volatility.,-0.2732,Bearish
+2023-09-18,BTC consolidates near 47123 amid low volatility.,-0.2732,Bearish
+2023-09-19,BTC consolidates near 47150 amid low volatility.,-0.2732,Bearish
+2023-09-20,BTC consolidates near 47178 amid low volatility.,-0.2732,Bearish
+2023-09-21,Market awaits Fed decision; BTC holds at 47205.,0.0772,Bullish
+2023-09-22,On-chain data shows mixed signals near 47232.,0.0,Neutral
+2023-09-23,Market awaits Fed decision; BTC holds at 47260.,0.0772,Bullish
+2023-09-24,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-09-25,BTC consolidates near 47315 amid low volatility.,-0.2732,Bearish
+2023-09-26,BTC consolidates near 47342 amid low volatility.,-0.2732,Bearish
+2023-09-27,Market awaits Fed decision; BTC holds at 47369.,0.0772,Bullish
+2023-09-28,On-chain data shows mixed signals near 47397.,0.0,Neutral
+2023-09-29,BTC consolidates near 47424 amid low volatility.,-0.2732,Bearish
+2023-09-30,Market awaits Fed decision; BTC holds at 47452.,0.0772,Bullish
+2023-10-01,Analysts debate next trend as BTC trades sideways at 47479.,0.0,Neutral
+2023-10-02,Analysts debate next trend as BTC trades sideways at 47506.,0.0,Neutral
+2023-10-03,Market awaits Fed decision; BTC holds at 47534.,0.0772,Bullish
+2023-10-04,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-05,Analysts debate next trend as BTC trades sideways at 47589.,0.0,Neutral
+2023-10-06,Market awaits Fed decision; BTC holds at 47616.,0.0772,Bullish
+2023-10-07,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-08,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-09,BTC consolidates near 47698 amid low volatility.,-0.2732,Bearish
+2023-10-10,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-11,On-chain data shows mixed signals near 47753.,0.0,Neutral
+2023-10-12,Analysts debate next trend as BTC trades sideways at 47780.,0.0,Neutral
+2023-10-13,On-chain data shows mixed signals near 47808.,0.0,Neutral
+2023-10-14,Analysts debate next trend as BTC trades sideways at 47835.,0.0,Neutral
+2023-10-15,BTC consolidates near 47863 amid low volatility.,-0.2732,Bearish
+2023-10-16,BTC consolidates near 47890 amid low volatility.,-0.2732,Bearish
+2023-10-17,BTC consolidates near 47917 amid low volatility.,-0.2732,Bearish
+2023-10-18,Analysts debate next trend as BTC trades sideways at 47945.,0.0,Neutral
+2023-10-19,BTC consolidates near 47972 amid low volatility.,-0.2732,Bearish
+2023-10-20,Market awaits Fed decision; BTC holds at 48000.,0.0772,Bullish
+2023-10-21,BTC consolidates near 48027 amid low volatility.,-0.2732,Bearish
+2023-10-22,BTC consolidates near 48054 amid low volatility.,-0.2732,Bearish
+2023-10-23,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-24,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-25,BTC consolidates near 48136 amid low volatility.,-0.2732,Bearish
+2023-10-26,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-27,BTC consolidates near 48191 amid low volatility.,-0.2732,Bearish
+2023-10-28,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-10-29,BTC consolidates near 48246 amid low volatility.,-0.2732,Bearish
+2023-10-30,Analysts debate next trend as BTC trades sideways at 48273.,0.0,Neutral
+2023-10-31,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-11-01,BTC consolidates near 48328 amid low volatility.,-0.2732,Bearish
+2023-11-02,Analysts debate next trend as BTC trades sideways at 48356.,0.0,Neutral
+2023-11-03,On-chain data shows mixed signals near 48383.,0.0,Neutral
+2023-11-04,On-chain data shows mixed signals near 48410.,0.0,Neutral
+2023-11-05,Market awaits Fed decision; BTC holds at 48438.,0.0772,Bullish
+2023-11-06,Analysts debate next trend as BTC trades sideways at 48465.,0.0,Neutral
+2023-11-07,On-chain data shows mixed signals near 48493.,0.0,Neutral
+2023-11-08,On-chain data shows mixed signals near 48520.,0.0,Neutral
+2023-11-09,Analysts debate next trend as BTC trades sideways at 48547.,0.0,Neutral
+2023-11-10,On-chain data shows mixed signals near 48575.,0.0,Neutral
+2023-11-11,Analysts debate next trend as BTC trades sideways at 48602.,0.0,Neutral
+2023-11-12,Analysts debate next trend as BTC trades sideways at 48630.,0.0,Neutral
+2023-11-13,BTC consolidates near 48657 amid low volatility.,-0.2732,Bearish
+2023-11-14,Market awaits Fed decision; BTC holds at 48684.,0.0772,Bullish
+2023-11-15,BTC consolidates near 48712 amid low volatility.,-0.2732,Bearish
+2023-11-16,BTC consolidates near 48739 amid low volatility.,-0.2732,Bearish
+2023-11-17,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-11-18,Analysts debate next trend as BTC trades sideways at 48794.,0.0,Neutral
+2023-11-19,Market awaits Fed decision; BTC holds at 48821.,0.0772,Bullish
+2023-11-20,BTC consolidates near 48849 amid low volatility.,-0.2732,Bearish
+2023-11-21,Analysts debate next trend as BTC trades sideways at 48876.,0.0,Neutral
+2023-11-22,Market awaits Fed decision; BTC holds at 48904.,0.0772,Bullish
+2023-11-23,BTC consolidates near 48931 amid low volatility.,-0.2732,Bearish
+2023-11-24,Market awaits Fed decision; BTC holds at 48958.,0.0772,Bullish
+2023-11-25,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-11-26,Analysts debate next trend as BTC trades sideways at 49013.,0.0,Neutral
+2023-11-27,Market awaits Fed decision; BTC holds at 49041.,0.0772,Bullish
+2023-11-28,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-11-29,Market awaits Fed decision; BTC holds at 49095.,0.0772,Bullish
+2023-11-30,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-01,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-02,On-chain data shows mixed signals near 49178.,0.0,Neutral
+2023-12-03,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-04,On-chain data shows mixed signals near 49232.,0.0,Neutral
+2023-12-05,Analysts debate next trend as BTC trades sideways at 49260.,0.0,Neutral
+2023-12-06,BTC consolidates near 49287 amid low volatility.,-0.2732,Bearish
+2023-12-07,BTC consolidates near 49315 amid low volatility.,-0.2732,Bearish
+2023-12-08,Analysts debate next trend as BTC trades sideways at 49342.,0.0,Neutral
+2023-12-09,Analysts debate next trend as BTC trades sideways at 49369.,0.0,Neutral
+2023-12-10,Market awaits Fed decision; BTC holds at 49397.,0.0772,Bullish
+2023-12-11,Analysts debate next trend as BTC trades sideways at 49424.,0.0,Neutral
+2023-12-12,Analysts debate next trend as BTC trades sideways at 49452.,0.0,Neutral
+2023-12-13,Market awaits Fed decision; BTC holds at 49479.,0.0772,Bullish
+2023-12-14,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-15,Analysts debate next trend as BTC trades sideways at 49534.,0.0,Neutral
+2023-12-16,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-17,Analysts debate next trend as BTC trades sideways at 49589.,0.0,Neutral
+2023-12-18,Analysts debate next trend as BTC trades sideways at 49616.,0.0,Neutral
+2023-12-19,Market awaits Fed decision; BTC holds at 49643.,0.0772,Bullish
+2023-12-20,Analysts debate next trend as BTC trades sideways at 49671.,0.0,Neutral
+2023-12-21,On-chain data shows mixed signals near 49698.,0.0,Neutral
+2023-12-22,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
+2023-12-23,On-chain data shows mixed signals near 49753.,0.0,Neutral
+2023-12-24,Analysts debate next trend as BTC trades sideways at 49780.,0.0,Neutral
+2023-12-25,Analysts debate next trend as BTC trades sideways at 49808.,0.0,Neutral
+2023-12-26,On-chain data shows mixed signals near 49835.,0.0,Neutral
+2023-12-27,Market awaits Fed decision; BTC holds at 49863.,0.0772,Bullish
+2023-12-28,Analysts debate next trend as BTC trades sideways at 49890.,0.0,Neutral
+2023-12-29,Market awaits Fed decision; BTC holds at 49917.,0.0772,Bullish
+2023-12-30,Market awaits Fed decision; BTC holds at 49945.,0.0772,Bullish
+2023-12-31,Crypto volumes drop as summer lull begins.,-0.2732,Bearish
