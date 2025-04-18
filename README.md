@@ -95,11 +95,11 @@ Engineered | log_return, whale_sentiment_diff | Combined sentiment-behavioral si
 ## 🧱 Model Architecture (Coming Up Next 🧩)
 We combine:
 
-A Gaussian HMM for market regime detection.
+A **Gaussian HMM** for market regime detection.
 
-An NLP pipeline to extract public sentiment.
+An **NLP pipeline** to extract public sentiment.
 
-A strategy recommendation engine based on regime + sentiment context.
+A **strategy recommendation engine** based on regime + sentiment context.
 
 📌 More details and diagrams will be added below 👇
 
@@ -146,6 +146,6 @@ UMH2025/
 ---
 
 ## 📚 Citations
-HMM On-Chain Data: Credit to [CoinGlass](https://www.coinglass.com/), [CryptoQuant](https://cryptoquant.com/), [Glassnode](https://glassnode.com/)
+**HMM On-Chain Data**: Credit to [CoinGlass](https://www.coinglass.com/), [CryptoQuant](https://cryptoquant.com/), [Glassnode](https://glassnode.com/)
 
-Reddit Sentiment Data: Credit to [Reddit](https://www.reddit.com/) via praw API
+**Reddit Sentiment Data**: Credit to [Reddit](https://www.reddit.com/) via praw API
