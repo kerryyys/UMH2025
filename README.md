@@ -53,7 +53,7 @@ pip install -r requirements.txt
 # Run the pipeline (example)
 python models/new_model.py
 ```
-Note: For NLP sentiment analysis, make sure your Reddit credentials are set up via .env or passed into the praw module.
+> Note: For NLP sentiment analysis, make sure your Reddit credentials are set up via .env or passed into the praw module.
 
 ---
 
@@ -105,6 +105,7 @@ A strategy recommendation engine based on regime + sentiment context.
 
 ---
 ## 🗂️ File Structure
+```
 UMH2025/
 ├── data/
 │   ├── cleaned/
@@ -140,6 +141,7 @@ UMH2025/
 ├── README.md                    # Project documentation (You're working on this!)
 ├── requirements.txt             # Python dependencies
 └── run.bat                      # Batch script to execute project pipeline
+```
 
 ---
 
