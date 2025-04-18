@@ -6,7 +6,7 @@ import os
 # Download VADER lexicon
 nltk.download("vader_lexicon")
 
-# Initialize Sentiment Analyzer
+# Initialize Sentiment Analyzer    
 sid = SentimentIntensityAnalyzer()
 
 # Load Reddit posts dataset
@@ -19,6 +19,6 @@ posts_df["content"] = posts_df["title"].fillna("") + " " + posts_df["body"].fill
 posts_df["sentiment_score"] = posts_df["content"].apply(lambda text: sid.polarity_scores(str(text))["compound"])
 
 # Save the updated dataset
-posts_df.to_csv("./data/NLP/processed/reddit_posts_with_sentiment.csv", index=False)
+posts_df.to_csv("./data/NLP/processed/reddit_historical_posts_with_sentiment.csv", index=False)
 
-print("✅ Sentiment analysis completed and saved to 'reddit_posts_with_sentiment.csv'")
+print("✅ Sentiment analysis completed and saved to 'reddit_historical_posts_with_sentiment.csv'")

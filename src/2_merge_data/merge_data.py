@@ -3,7 +3,7 @@ from util import DataCombiner
 BASE_DIR = "data"
 BASE_PROCESSED_DIR = "data/processed"
 CRYPTO = "btc"
-YEARS = ["2023-2024"]
+YEARS = ["2022-2023", "2023-2024", "2024-2025"]
 PROVIDERS = ["glassnode", "coinglass", "cryptoquant"]
 
 
