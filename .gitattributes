@@ -1,3 +1,0 @@
-*—combined_data.csv filter=lfs diff=lfs merge=lfs -text
-*_combined_data.csv filter=lfs diff=lfs merge=lfs -text
-data/processed/btc/**/*.csv filter=lfs diff=lfs merge=lfs -text
