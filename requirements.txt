@@ -1,0 +1,13 @@
+pandas
+numpy
+hmmlearn
+scikit-learn
+matplotlib
+scipy
+joblib
+cybotrade_datasource
+dash
+pandas
+plotly
+joblib
+base64
