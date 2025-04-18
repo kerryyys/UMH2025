@@ -38,9 +38,9 @@ Our aim is to build an **alpha-generating crypto trading system** that:
 
 ## 🛠️ Setup & Installation
 
-```bash
+```
 # Clone the repo
-git clone https://github.com/your-org/UMH2025.git
+git clone https://github.com/kerryyys/UMH2025.git
 cd UMH2025
 
 # Create virtual environment
@@ -52,33 +52,46 @@ pip install -r requirements.txt
 
 # Run the pipeline (example)
 python models/new_model.py
+```
 Note: For NLP sentiment analysis, make sure your Reddit credentials are set up via .env or passed into the praw module.
+
 ---
+
 ## 🌟 Innovation Highlights
 💬 NLP for Whale Behavior Tracking
 Scrapes Reddit data to detect how the crowd reacts to sudden market flows.
 
-Uses VADER Sentiment Analysis to extract daily sentiment scores.
+Uses **VADER Sentiment Analysis** to extract daily sentiment scores.
 
 Integrates whale movement (inflows/outflows) with public opinion.
+
 ---
+
 ## 🔎 Feature Attribution for Transparency
 Uses decision tree explanations & correlation matrices to expose how features drive decisions.
 
 Explains why the model triggers certain BUY/SELL calls.
+
 ---
-📊 Visual Insights
+
+## 📊 Visual Insights
 Heatmaps, clustering charts, and sentiment trendlines to explain strategies visually.
+
 ---
+
 Model state visualizations (e.g., HMM transition maps, emission probabilities).
-***
+
+---
+
 ## 🧪 Feature Engineering
 Feature Type | Examples | Description
 On-Chain | exchange_inflow, whale_spikes | Real-time behaviors of smart money
 Sentiment | avg_sentiment_score, post_volume | Reddit NLP signals aggregated daily
 Technical | price, returns, volume | Classical indicators
 Engineered | log_return, whale_sentiment_diff | Combined sentiment-behavioral signals
+
 ---
+
 ## 🧱 Model Architecture (Coming Up Next 🧩)
 We combine:
 
@@ -127,7 +140,9 @@ UMH2025/
 ├── README.md                    # Project documentation (You're working on this!)
 ├── requirements.txt             # Python dependencies
 └── run.bat                      # Batch script to execute project pipeline
+
 ---
+
 ## 📚 Citations
 HMM On-Chain Data: Credit to [CoinGlass](https://www.coinglass.com/), [CryptoQuant](https://cryptoquant.com/), [Glassnode](https://glassnode.com/)
 
