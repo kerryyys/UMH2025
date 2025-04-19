@@ -4,22 +4,26 @@ Hi there! We are **Team Lima Biji**, participating in the **UMHackathon 2025** u
 📊 **Domain 2 - Quantitative Trading**
 
 📑 **Slides link**: [View Our Deck](https://www.canva.com/design/DAGkWFnoy34/IumXz3cmGOLTeMXOjEOGaw/edit?utm_content=DAGkWFnoy34&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+Our project integrates financial market data and online user sentiment to enhance crypto market regime detection using Hidden Markov Models (HMM), with the final goal of recommending BUY/SELL/HOLD strategies based on both on-chain data and Reddit discussion patterns.
 
 ---
 
 ## 🧠 Introduction
 
-In the fast-paced world of cryptocurrency, market sentiment and behavioral cues from key players like whales are crucial signals for strategy formulation. Our project bridges the power of **Hidden Markov Models (HMM)** and **Natural Language Processing (NLP)** to detect market regimes and predict optimal trading strategies.
+Cryptocurrency markets are volatile and sentiment-driven. While traditional models rely purely on numerical indicators, our project attempts to answer:
+
+> "Can combining on-chain whale behavior and Reddit user sentiment create more explainable, adaptive, and realistic trading strategies?"
+
+We propose an explainable ML-driven trading assistant that identifies market regimes and gives contextual investment suggestions supported by public discussions.
 
 ---
 
 ## 🎯 Project Goal
 
 Our aim is to build an **alpha-generating crypto trading system** that:
-- Classifies market conditions (bull, bear, neutral) using **on-chain features**.
-- Integrates **Reddit sentiment analysis** to understand public reaction to market shifts.
-- Suggests **BUY/SELL/HOLD strategies** based on regime and sentiment.
-- Emphasizes **transparency** using **feature attribution** and **data visualization**.
+- Detect **market regimes** using unsupervised learning (HMM).
+- Integrate **Reddit sentiment** to capture behavioral shifts.
+- Recommend trading actions (BUY/SELL/HOLD) along with **justifications** derived from sentiment trends.
 
 ---
 
@@ -101,7 +105,62 @@ An **NLP pipeline** to extract public sentiment.
 
 A **strategy recommendation engine** based on regime + sentiment context.
 
-📌 More details and diagrams will be added below 👇
+### 🧠 Model Architecture (Conceptual View):
+            ┌────────────────────┐
+            │ On-chain Features │◄─── CryptoQuant / Glassnode / Coinglass
+            └────────────────────┘
+                       │
+                       ▼
+            ┌────────────────────┐
+            │ Reddit Sentiment  │◄─── NLP pipeline from r/CryptoCurrency, r/BitcoinMarkets
+            └────────────────────┘
+                       │
+                       ▼
+            ┌────────────────────┐
+            │ Feature Merger     │
+            └────────────────────┘
+                       │
+                       ▼
+            ┌────────────────────┐
+            │ Gaussian HMM       │
+            └────────────────────┘
+                       │
+                       ▼
+         ┌─────────────────────────────┐
+         │ Strategy Decision Engine    │ ──> 🔴 SELL / 🟡 HOLD / 🟢 BUY
+         └─────────────────────────────┘
+
+### 🧱 Class Diagram (Simplified Structure)
++---------------------+
+| RedditSentiment     |
++---------------------+
+| + fetch_posts()     |
+| + analyze()         |
+| + save_results()    |
++---------------------+
+
++---------------------+
+| FeatureEngineer     |
++---------------------+
+| + merge_sources()   |
+| + clean_features()  |
++---------------------+
+
++---------------------+
+| HMMTrader           |
++---------------------+
+| + train_model()     |
+| + predict_regime()  |
+| + evaluate()        |
+| + generate_signals()|
++---------------------+
+
++---------------------+
+| Visualizer          |
++---------------------+
+| + plot_regimes()    |
+| + save_backtest()   |
++---------------------+
 
 ---
 ## 🗂️ File Structure
@@ -126,7 +185,6 @@ UMH2025/
 │   ├── GMM_Model.py             # Gaussian Mixture Model implementation
 │   ├── HMM_Model_2.py           # Another variant of the HMM pipeline
 │   ├── HMM_Model.pkl            # Trained HMM model (pickle)
-│   ├── HMM_Model.py             # Main HMM modeling script
 │   ├── kmeans_model.py          # KMeans clustering model
 │   ├── new_model.py             # Combined pipeline (likely used in final integration)
 │   ├── test_build_csv.py        # Script for testing CSV outputs
