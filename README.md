@@ -97,13 +97,13 @@ Engineered | log_return, whale_sentiment_diff | Combined sentiment-behavioral si
 
 ---
 
-## 🧱 Model Architecture (Coming Up Next 🧩)
+## 🧱 Model Architecture
 We combine:
 
 A **Gaussian HMM** for market regime detection.
 An **NLP pipeline** to extract public sentiment.
 A **strategy recommendation engine** based on regime + sentiment context.
-![image](https://github.com/user-attachments/assets/ab9599b9-7568-428a-9e0f-bbd60aed4d66)
+![image](https://github.com/user-attachments/assets/cdf75edd-bf0f-42df-869d-2d38e56d9cfc)
 
 ### 🧠 Model Architecture (Conceptual View):
             ┌────────────────────┐
