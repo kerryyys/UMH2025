@@ -100,10 +100,9 @@ Engineered | log_return, whale_sentiment_diff | Combined sentiment-behavioral si
 We combine:
 
 A **Gaussian HMM** for market regime detection.
-
 An **NLP pipeline** to extract public sentiment.
-
 A **strategy recommendation engine** based on regime + sentiment context.
+![image](https://github.com/user-attachments/assets/ab9599b9-7568-428a-9e0f-bbd60aed4d66)
 
 ### 🧠 Model Architecture (Conceptual View):
             ┌────────────────────┐
@@ -183,7 +182,10 @@ UMH2025/
 │   ├── pkl/                      # Serialized model files
 │   ├── generate_backtest.py     # Script to simulate strategy based on HMM
 │   ├── GMM_Model.py             # Gaussian Mixture Model implementation
-│   ├── HMM_Model_2.py           # Another variant of the HMM pipeline
+│   ├── HMM_Model_2.py           # version 2
+│   ├── HMM_Model_3.py           # version 3
+│   ├── HMM_Model_3_Strategy.py  # version 3 with strategy
+│   ├── HMM_Model_4.ipynb        # version 4 (latest)
 │   ├── HMM_Model.pkl            # Trained HMM model (pickle)
 │   ├── kmeans_model.py          # KMeans clustering model
 │   ├── new_model.py             # Combined pipeline (likely used in final integration)
