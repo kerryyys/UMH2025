@@ -166,42 +166,48 @@ A **strategy recommendation engine** based on regime + sentiment context.
 ## 🗂️ File Structure
 ```
 UMH2025/
+├── archive/                     # Archived or deprecated files
+
 ├── data/
-│   ├── cleaned/
-│   │   └── btc 2023-2024/        # Cleaned crypto datasets
+│   ├── cleaned/                 # Cleaned datasets (e.g., cleaned/btc 2023-2024/)
 │   ├── NLP/
-│   │   ├── processed/            # Processed NLP sentiment data
-│   │   ├── raw_unused_data/      # Raw unused Reddit post data
-│   │   └── reddit_posts.csv      # Collected Reddit post data
-│   ├── processed_data/           # Final processed datasets for modeling
+│   │   ├── processed/           # Processed NLP sentiment data
+│   │   ├── raw_unused_data/     # Raw unused Reddit post data
+│   │   └── reddit_posts.csv     # Collected Reddit post data
+│   ├── processed_data/          # Final processed datasets for modeling
 │   └── raw_data/
 │       ├── crypto_kmeans_clustering_output.csv
 │       └── crypto_strategy_output.csv
 
-├── models/
-│   ├── NLP/                      # (Reserved for NLP models/scripts)
-│   ├── pkl/                      # Serialized model files
-│   ├── generate_backtest.py     # Script to simulate strategy based on HMM
-│   ├── GMM_Model.py             # Gaussian Mixture Model implementation
-│   ├── HMM_Model_2.py           # version 2
-│   ├── HMM_Model_3.py           # version 3
-│   ├── HMM_Model_3_Strategy.py  # version 3 with strategy
-│   ├── HMM_Model_4.ipynb        # version 4 (latest)
-│   ├── HMM_Model.pkl            # Trained HMM model (pickle)
-│   ├── kmeans_model.py          # KMeans clustering model
-│   ├── new_model.py             # Combined pipeline (likely used in final integration)
-│   ├── test_build_csv.py        # Script for testing CSV outputs
-│   └── train_model              # Model training entry point (could be a directory or file)
+├── models/                      # Currently unused – reserved for model scripts or checkpoints
 
 ├── results/                     # Folder to store visualizations or model outputs
 
-├── src/                         # (Reserved for source code files)
+├── src/
+│   ├── 0_config/                # Configuration files and constants
+│   ├── 1_fetch_data/            # Scripts to fetch or collect raw data
+│   ├── 2_merge_data/            # Scripts to merge and align multiple data sources
+│   ├── 3_clean_data/            # Scripts to clean and preprocess datasets
+│   ├── 4_backtesting/           # Backtesting strategies and evaluation logic
+│   ├── NLP/                     # NLP-specific analysis, sentiment scoring, etc.
+│   ├── _pycache_/             
+│   ├── assets/                  # Static files for Dash app styling
+│   │   └── custom.css
+│   └── dash/                    # Dash app components
+│       ├── app.py               # Main entry point for the Dash dashboard
+│       ├── callbacks.py         # Callback functions for interactivity
+│       ├── data_loader.py       # Loads and prepares data for visualization
+│       └── layout.py            # Dash app layout and structure
 
 ├── .gitattributes
 ├── .gitignore
-├── README.md                    # Project documentation (You're working on this!)
+├── README.md                    # Project documentation
 ├── requirements.txt             # Python dependencies
-└── run.bat                      # Batch script to execute project pipeline
+├── run.bat                      # Batch script to execute project pipeline
+├── setup_env.bat                # Batch script to set up the environment
+└── ohlcv.csv                    # OHLCV (Open, High, Low, Close, Volume) data
+
+
 ```
 
 ---
