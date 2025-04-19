@@ -17,3 +17,31 @@ def generate_dummy_data():
 # Load the model
 def load_model(model_path):
     return joblib.load(model_path)
+
+# import requests
+# import pandas as pd
+# from requests.auth import HTTPBasicAuth
+
+# API_KEY = "p85PodLHYEP2zIfquwiYUgRejWRl40tnKsVFza6peLfju4eg"
+# API_SECRET = "your_api_secret"
+
+# def fetch_real_time_data(symbol="BTCUSDT", interval="1m", limit=100):
+#     url = "https://api.cybotrade.rs/market_data/candles"
+#     params = {
+#         "symbol": symbol,
+#         "interval": interval,
+#         "limit": limit
+#     }
+#     response = requests.get(url, params=params, auth=HTTPBasicAuth(API_KEY, API_SECRET))
+
+#     if response.status_code != 200:
+#         raise Exception(f"API Error {response.status_code}: {response.text}")
+    
+#     data = response.json()
+
+#     df = pd.DataFrame(data['candles'], columns=["timestamp", "open", "high", "low", "close", "volume"])
+#     df["Date"] = pd.to_datetime(df["timestamp"], unit="ms")
+#     df.set_index("Date", inplace=True)
+#     df = df.astype(float)
+
+#     return df
