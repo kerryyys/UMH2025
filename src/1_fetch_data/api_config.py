@@ -189,9 +189,9 @@ def fetch_data_from_glassnode():
     return links
 
 
-GLASSNODE_LINKS: TopicMap = {
-    "glassnode": fetch_data_from_glassnode()
-}
+# GLASSNODE_LINKS: TopicMap = {
+#     "glassnode": fetch_data_from_glassnode()
+# }
 
 
 def build_topics(links: TopicMap, link_builder: LinkBuilder) -> Dict[str, str]:
@@ -207,5 +207,5 @@ def build_topics(links: TopicMap, link_builder: LinkBuilder) -> Dict[str, str]:
 LINKS = {
     **build_topics(CRYPTOQUANT_LINKS, make_cryptoquant_link),
     **build_topics(COINGLASS_LINKS, make_coinglass_link),
-    **build_topics(GLASSNODE_LINKS, make_glassnode_link)
+    # **build_topics(GLASSNODE_LINKS, make_glassnode_link)
 }
