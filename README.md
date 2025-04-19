@@ -27,16 +27,17 @@ Our aim is to build an **alpha-generating crypto trading system** that:
 
 ---
 
-## 🧪 Hypotheses & Metrics (To be completed)
+## 🧪 Hypotheses & Metrics
 > ✍️ Add your hypotheses here, e.g.:
-- H1: Reddit sentiment shifts correlate strongly with whale behavior in bearish markets.
-- H2: Combining sentiment with on-chain activity outperforms pure technical analysis.
+- H1: Technical Indicators Improve Regime Detection
+- H2: XGBoost Feature Selection Predicts Extreme Price Moves
+- H3: Whale-Driven Features Define Market Regimes
 
 > ✍️ Add metrics here, e.g.:
 - Sharpe Ratio
+- Max Drawdown
+- Trade Frequency
 - Strategy Win Rate
-- Precision/Recall for sentiment classification
-- Regime classification accuracy
 
 ---
 
