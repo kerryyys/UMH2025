@@ -28,12 +28,12 @@ Our aim is to build an **alpha-generating crypto trading system** that:
 ---
 
 ## 🧪 Hypotheses & Metrics
-> ✍️ Add your hypotheses here, e.g.:
+> ✍️ Hypothesis:
 - H1: Technical Indicators Improve Regime Detection
 - H2: XGBoost Feature Selection Predicts Extreme Price Moves
 - H3: Whale-Driven Features Define Market Regimes
 
-> ✍️ Add metrics here, e.g.:
+> ✍️ Metrics:
 - Sharpe Ratio
 - Max Drawdown
 - Trade Frequency
